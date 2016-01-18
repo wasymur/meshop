@@ -3,5 +3,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+def product(request, product_id):
+    return HttpResponse("lets get you product %s." % product_id)
