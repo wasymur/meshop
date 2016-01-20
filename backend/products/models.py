@@ -12,12 +12,11 @@ class Product(StdModel):
     video = models.CharField(max_length=1000, null=True, blank=True)
     status = models.CharField(max_length=30, choices=(
         ('waiting', 'Waiting'), # waiting to pricing or customizing.. should be default
-        ('new', 'New'), # new product waiting to see if there is any
         ('approved', 'Approved'), #ready for selling
         ('closed', 'Closed'), # closed after selling all
-        ('canceled', 'Canceled'), # canceled for some reason
     ), db_index=True, default='waiting')
     active = models.BooleanField(default=False)
+    expiration_date = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
         return u"{0} :::: {1}".format(self.ID, self.name)
