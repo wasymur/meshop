@@ -3,13 +3,19 @@
 
 
 {% block content %}
-<br>
-{{ product.name}}<br>
-{{ product.subtitle}}<br>
-{{ product.about}}<br>
+
+<div class="panel panel-info">
+    <div class="panel-heading">{{ product.name}}</div>
+    <div class="panel-body">
+{{ product.subtitle}}<hr>
+{{ product.about}}<hr>
 {{ product.price}}
-
-
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary">I am interested</button>
+        <button class="btn btn-success">I want it</button>
+    </div>
+</div>
 
 
 
