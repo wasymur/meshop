@@ -1,5 +1,6 @@
 from django.db import models
 from general.std_model import StdModel
+from providers.models import Provider
 
 
 class Product(StdModel):
@@ -17,6 +18,7 @@ class Product(StdModel):
     ), db_index=True, default='waiting')
     active = models.BooleanField(default=False)
     expiration_date = models.DateTimeField(null=True, blank=True)
+    provider = models.ForeignKey(Provider, null=True)
 
     def __unicode__(self):
         return u"{0} :::: {1}".format(self.ID, self.name)
