@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import Http404
 from models import Product, Category
+from django.template import RequestContext
 
 from django.http import HttpResponse
-
+from django.conf import settings
 
 
 def product(request, product_id):
@@ -11,8 +12,10 @@ def product(request, product_id):
         product = Product.objects.get(pk=product_id)
     except:
         raise Http404("Question does not exist")
-    context = {'product': product}
-    return render(request, 'products/product.html', context)
-
-
+    context = {
+        'product': product,
+        'MEDIA_URL' : settings.MEDIA_URL
+    }
+    #return render(request, 'products/product.html', context)
+    return render_to_response('products/product.html', context, context_instance=RequestContext(request))
 

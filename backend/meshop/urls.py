@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns, static
+from django.conf import settings
 
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -22,3 +24,12 @@ urlpatterns = [
     url(r'^products/', include('products.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+
+
+
+print '*******************************************8'
+
+print staticfiles_urlpatterns()
+# static files:
+urlpatterns += staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

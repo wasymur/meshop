@@ -3,20 +3,23 @@
 
 
 {% block content %}
+<br><br>
 
-<div class="panel panel-info">
-    <div class="panel-heading">{{ product.name}}</div>
-    <div class="panel-body">
-{{ product.subtitle}}<hr>
-{{ product.about}}<hr>
-{{ product.price}}
-    </div>
-    <div class="panel-footer">
-        <button class="btn btn-primary">I am interested</button>
-        <button class="btn btn-success">I want it</button>
-    </div>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object img-responsive img-thumbnail" src="{{MEDIA_URL}}{{product.image}}" alt="{{product.name}}" width="200px">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{product.name}}</h4>
+      {{ product.subtitle}} --
+    {{product.about}}
+  </div>
 </div>
 
+<button class="btn btn-primary">I am interested</button>
+<button class="btn btn-success">I want it</button>
 
 
 {% endblock %}
