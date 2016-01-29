@@ -99,7 +99,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
+PROJECT_ROOT = os.path.abspath(os.path.join(
+    os.path.dirname(__file__),
+    os.path.pardir
+))
+
+# Media
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media', '')
+MEDIA_URL = '/media/'
+
+
+# Static files (CSS, JavaScript, Images
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]

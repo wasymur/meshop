@@ -1,0 +1,32 @@
+body {
+    background-color: #EAEBEF !important;
+}
+.green-box {
+    background-color: #6CBE42 !important;
+    color: #DBFFC2 !important;
+}
+.blue-box {
+    background-color: #008B8E;
+    color: #A2FDF8;
+}
+.orange-box {
+    background-color: #FEAB33;
+    color: #FFE093;
+}
+.light-blue-box {
+    background-color: #56BBE7;
+    color: #A2F2FF;
+}
+
+
+.logo-box {
+    height: 100px;
+    width: 200px;
+}
+.head-box {
+    width: 200px;
+    height: 49px;
+}
+.box {
+    margin:1px;
+}
