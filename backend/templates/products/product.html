@@ -3,23 +3,62 @@
 
 
 {% block content %}
-<br><br>
+<title>MeShop | {{product.name}}</title>
 
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object img-responsive img-thumbnail" src="{{MEDIA_URL}}{{product.image}}" alt="{{product.name}}" width="200px">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">{{product.name}}</h4>
-      {{ product.subtitle}} --
-    {{product.about}}
+
+<div class="panel panel-default">
+  <div class="panel-heading green-box">{{product.name}}</div>
+  <div class="panel-body">
+
+      <div class="media">
+        <div class="media-right">
+          <a href="#">
+            <img class="media-object img-responsive img-thumbnail" src="{{MEDIA_URL}}{{product.image}}" alt="{{product.name}}" width="200px">
+          </a>
+          <h2 class="green-box">
+                السعر:
+          {{product.price}}<small>
+            ش.ج          </small>
+          </h2>
+
+          <button class="btn btn-lg btn-primary btn-block">I am interested</button>
+          <button class="btn btn-lg btn-success btn-block">I want it</button>
+
+
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading">
+            <small>{{product.sub_title}}</small>
+          </h2>
+          {{product.about}}
+          <br />
+        </div>
+      </div>
+
   </div>
 </div>
 
-<button class="btn btn-primary">I am interested</button>
-<button class="btn btn-success">I want it</button>
 
 
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+<!-- Small modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
 {% endblock %}
