@@ -6,9 +6,9 @@ from providers.models import Provider
 class Product(StdModel):
     name = models.CharField(max_length=100)
     sub_title = models.CharField(max_length=300, null=True, blank=True)
-    about = models.CharField(max_length=10000)
+    about = models.TextField(max_length=10000)
     price = models.PositiveSmallIntegerField(default=0)
-    customer_price = models.PositiveSmallIntegerField(default=0)
+    provider_price = models.PositiveSmallIntegerField(default=0)
     image = models.ImageField(upload_to = 'products/', default='None/no-img.jpg')
     category = models.ForeignKey('Category', null=True)
     video = models.CharField(max_length=1000, null=True, blank=True)
@@ -33,3 +33,4 @@ class Category(StdModel):
 
     def __unicode__(self):
         return u"{0} :::: {1}".format(self.ID, self.name)
+

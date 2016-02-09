@@ -25,11 +25,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-
-
-
-print '*******************************************8'
-
-print staticfiles_urlpatterns()
 # static files:
 urlpatterns += staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
