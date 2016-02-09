@@ -1,22 +1,11 @@
 body {
     background-color: #EAEBEF !important;
 }
-.green-box {
-    background-color: #6CBE42 !important;
-    color: #DBFFC2 !important;
-}
-.blue-box {
-    background-color: #008B8E;
-    color: #A2FDF8;
-}
-.orange-box {
-    background-color: #FEAB33;
-    color: #FFE093;
-}
-.light-blue-box {
-    background-color: #56BBE7;
-    color: #A2F2FF;
-}
+.green-box { background-color: #6CBE42 !important; color: #DBFFC2 !important;}
+.blue-box {background-color: #008B8E;color: #A2FDF8;}
+.orange-box {background-color: #FEAB33;color: #FFE093;}
+.light-blue-box {background-color: #56BBE7;color: #A2F2FF;}
+.black-box {background-color: black;color: white;}
 
 
 .logo-box {
@@ -29,4 +18,18 @@ body {
 }
 .box {
     margin:1px;
+}
+
+
+.admin-actions {
+    position: fixed;
+    bottom: 0px;
+    left:-250px;
+    direction: ltr;
+    width: 300px;
+    background-color: black;
+    padding: 15px;
+}
+.admin-actions:hover {
+    left: 0px;
 }
