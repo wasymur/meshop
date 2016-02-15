@@ -29,6 +29,7 @@ body {
     width: 300px;
     background-color: black;
     padding: 15px;
+    color: white;
 }
 .admin-actions:hover {
     left: 0px;
