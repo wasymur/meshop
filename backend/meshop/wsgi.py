@@ -26,7 +26,7 @@ sys.path.append('/var/www/meshop')
 sys.path.append('/var/www/meshop/meshop')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'meshop.settings'
 # Activate your virtual env
-activate_env=os.path.expanduser("/var/www/.virtualenvs/virtualenvs/bin/activate_this.py")
+activate_env=os.path.expanduser("/var/www/.virtualenvs/meshopvenv/bin/activate_this.py")
 execfile(activate_env, dict(__file__=activate_env))
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
