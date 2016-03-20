@@ -22,8 +22,8 @@ import site
 # Add the site-packages of the chosen virtualenv to work with
 site.addsitedir('/var/www/.virtualenvs/meshopvenv/local/lib/python2.7/site-packages')
 # Add the app's directory to the PYTHONPATH
-sys.path.append('/var/www/meshop')
-sys.path.append('/var/www/meshop/backend/meshop')
+sys.path.append('/var/www/')
+sys.path.append('/var/www/meshop/backend/')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'meshop.settings'
 # Activate your virtual env
 activate_env=os.path.expanduser("/var/www/.virtualenvs/meshopvenv/bin/activate_this.py")
