@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'meshop',
         'USER': 'root',
-        'PASSWORD': 'wasyclassy',
+        'PASSWORD': 'classy',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
@@ -124,3 +124,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+"""
+
+"""
+import socket
+
+if socket.gethostname() == 'wasy-lap':
+    pass
+else:
+    DEBUG = TEMPLATE_DEBUG = False
+    DATABASES['default']['PASSWORD'] = 'wasyclassy'

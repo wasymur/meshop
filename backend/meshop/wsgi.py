@@ -19,14 +19,20 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 import os
 import sys
 import site
+import socket
+
+from django.core.wsgi import get_wsgi_application
+
 # Add the site-packages of the chosen virtualenv to work with
-site.addsitedir('/var/www/.virtualenvs/meshopvenv/local/lib/python2.7/site-packages')
-# Add the app's directory to the PYTHONPATH
-sys.path.append('/var/www/')
-sys.path.append('/var/www/meshop/backend/')
+if socket.gethostname() != 'wasy-lap':
+    site.addsitedir('/var/www/.virtualenvs/meshopvenv/local/lib/python2.7/site-packages')
+    sys.path.append('/var/www/')
+    sys.path.append('/var/www/meshop/backend/')
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'meshop.settings'
 # Activate your virtual env
-activate_env=os.path.expanduser("/var/www/.virtualenvs/meshopvenv/bin/activate_this.py")
-execfile(activate_env, dict(__file__=activate_env))
-from django.core.wsgi import get_wsgi_application
+if socket.gethostname() != 'wasy-lap':
+    activate_env = os.path.expanduser("/var/www/.virtualenvs/meshopvenv/bin/activate_this.py")
+    execfile(activate_env, dict(__file__=activate_env))
+
 application = get_wsgi_application()
