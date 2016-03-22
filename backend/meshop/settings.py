@@ -109,7 +109,6 @@ MEDIA_URL = '/media/'
 
 
 # Static files (CSS, JavaScript, Images
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -123,5 +122,6 @@ import socket
 if socket.gethostname() == 'wasy-lap':
     pass
 else:
+    STATIC_ROOT = '/var/www/static/'
     #DEBUG = TEMPLATE_DEBUG = False
     DATABASES['default']['PASSWORD'] = 'wasyclassy'
